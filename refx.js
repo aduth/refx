@@ -27,7 +27,7 @@
 			return function( next ) {
 				return function( action ) {
 					var e, el;
-					if ( !! map[ action.type ] ) {
+					if ( map[ action.type ] ) {
 						for ( e = 0, el = map[ action.type ].length; e < el; e++ ) {
 							map[ action.type ][ e ]( store, action );
 						}
