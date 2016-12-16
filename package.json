@@ -1,0 +1,39 @@
+{
+  "name": "refx",
+  "main": "refx.js",
+  "version": "1.0.0",
+  "description": "Redux middleware for triggering side effects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aduth/refx.git"
+  },
+  "files": [
+    "refx.js"
+  ],
+  "scripts": {
+    "minify": "uglifyjs refx.js -c -m > refx.min.js",
+    "build": "npm run minify",
+    "lint": "eslint refx.js test/refx.js",
+    "test": "mocha && npm run lint",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "redux",
+    "redux-middleware",
+    "middleware"
+  ],
+  "author": {
+    "name": "Andrew Duthie",
+    "email": "andrew@andrewduthie.com",
+    "url": "http://andrewduthie.com/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-wpcalypso": "^0.6.0",
+    "eslint-plugin-wpcalypso": "^3.0.2",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6",
+    "uglify-js": "^2.7.5"
+  }
+}

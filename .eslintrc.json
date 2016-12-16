@@ -1,0 +1,13 @@
+{
+	"extends": "wpcalypso",
+	"env": {
+		"node": true,
+		"mocha": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 5
+	},
+	"rules": {
+		"no-var": 0
+	}
+}
