@@ -2,11 +2,11 @@
 
 _refx_ is a Redux middleware for triggering side effects.
 
-In Redux, actions are dispatched synchronously. However, in many real-world applications you'll find yourself needing to fetch data from an API asynchronously. Other popular solutions in the ecosystem include [redux-thunk](https://github.com/gaearon/redux-thunk) or [redux-saga](https://github.com/yelouafi/redux-saga), which augment your [action creators](http://redux.js.org/docs/Glossary.html#action-creator) and empower them to dispatch whenever and as often as necessary.
+In Redux, actions are dispatched synchronously. However, in many real-world applications you'll find yourself needing to fetch data from an API asynchronously. Other popular solutions in the ecosystem like [redux-thunk](https://github.com/gaearon/redux-thunk) augment your [action creators](http://redux.js.org/docs/Glossary.html#action-creator) and empower them to dispatch whenever and as often as necessary.
 
-_refx_ takes a different approach; like in pure Redux, your actions must always be plain objects. To perform side effects, you instead define effects as an object of action type keys whose values are functions which trigger additional effects. Those side effects have access to both the dispatched action and the store instance meaning they — like thunks and sagas — can dispatch whenenever and as often as necessary.
+_refx_ takes a different approach; like in a plain Redux store, your actions must always be plain objects. To perform side effects, you instead define effects as an object of action type keys whose values are functions which trigger additional effects. Those side effects have access to both the dispatched action and the store instance meaning they — like thunks — can dispatch whenenever and as often as necessary.
 
-Why is this any better than the other solutions? It separates actions which affect change in your store from the side effects that occur as a mere consequence of said actions. Actions as plain objects are also easier to extend, enabling you to compose action creators in ways that would otherwise be not possible with thunks or sagas.
+Why is this any better than the other solutions? It separates actions which affect change in your store from the side effects that occur as a mere consequence of said actions. Actions as plain objects are also easier to extend, enabling you to compose action creators in ways that would otherwise be not possible with thunks.
 
 Heavily optimized, it weighs in at a paltry 267 bytes gzipped and compressed. Browser support follows Redux, including all Node.js versions and browsers Internet Explorer 9 or newer. If you need to support Internet Explorer 8, add [`es5-shim`](https://github.com/es-shims/es5-shim) to your page prior to loading _refx_.
 
