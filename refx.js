@@ -8,27 +8,25 @@
 	function flattenIntoMap( map, effects ) {
 		var key;
 		for ( key in effects ) {
-			if ( effects.hasOwnProperty( key ) ) {
-				if ( Array.isArray( effects ) ) {
-					flattenIntoMap( map, effects[ key ] );
-				} else {
-					map[ key ] = ( map[ key ] || [] ).concat( effects[ key ] );
-				}
+			if ( Array.isArray( effects ) ) {
+				flattenIntoMap( map, effects[ key ] );
+			} else {
+				map[ key ] = ( map[ key ] || [] ).concat( effects[ key ] );
 			}
 		}
 	}
 
 	return function() {
-		var map = Object.create( null );
+		var map = {};
 
 		flattenIntoMap( map, [].slice.call( arguments ) );
 
 		return function( store ) {
 			return function( next ) {
 				return function( action ) {
-					var e, el;
+					var e;
 					if ( map[ action.type ] ) {
-						for ( e = 0, el = map[ action.type ].length; e < el; e++ ) {
+						for ( e in map[ action.type ] ) {
 							map[ action.type ][ e ]( store, action );
 						}
 					}
