@@ -58,7 +58,7 @@ Each effect handler is a function or array of functions, each accepting the disp
 
 ## License
 
-Copyright (c) 2016 Andrew Duthie
+Copyright (c) 2017 Andrew Duthie
 
 [The MIT License (MIT)](https://opensource.org/licenses/MIT)
 
