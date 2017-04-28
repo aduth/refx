@@ -27,7 +27,7 @@
 					var e;
 					if ( map[ action.type ] ) {
 						for ( e in map[ action.type ] ) {
-							map[ action.type ][ e ]( store, action );
+							map[ action.type ][ e ]( action, store );
 						}
 					}
 

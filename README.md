@@ -20,7 +20,7 @@ import refx from 'refx';
 import todos from './reducer';
 
 const effects = {
-	TODO_ADD: ( store, action ) => {
+	TODO_ADD: ( action, store ) => {
 		fetch( `/todos`, {
 			method: 'POST',
 			body: action.todo
@@ -52,7 +52,7 @@ npm install refx
 
 If included as a script in the browser, it is made available in the global context as `refx`.
 
-The _refx_ middleware function accepts an object of action type keys or an array of objects. Each effect handler is a function or array of functions, each accepting the store instance and dispatched action object.
+The _refx_ middleware function accepts an object of action type keys or an array of objects. Each effect handler is a function or array of functions, each accepting the dispatched action object and store instance.
 
 ## License
 

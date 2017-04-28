@@ -5,7 +5,7 @@ refx = require( '../' );
 
 describe( 'refx()', function() {
 	var effects = {
-		TEST: function( store, action ) {
+		TEST: function( action, store ) {
 			store.dispatch( {
 				type: action.type,
 				data: store.getState()
