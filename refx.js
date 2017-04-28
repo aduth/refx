@@ -16,10 +16,10 @@
 		}
 	}
 
-	return function() {
+	return function( effects ) {
 		var map = {};
 
-		flattenIntoMap( map, [].slice.call( arguments ) );
+		flattenIntoMap( map, effects );
 
 		return function( store ) {
 			return function( next ) {

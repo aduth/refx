@@ -46,23 +46,9 @@ describe( 'refx()', function() {
 		assert( middleware );
 	} );
 
-	it( 'should accept arguments of objects of keys', function() {
-		var middleware = refx( effects, effects );
-
-		assert( middleware, 2 );
-	} );
-
 	it( 'should accept an array of objects of keys', function() {
 		var middleware = refx( [ effects ] );
 
 		assert( middleware );
-	} );
-
-	it( 'should accept arguments of mixed arrays and objects', function() {
-		var middleware = refx( {
-			TEST: [ effects.TEST, effects.TEST ]
-		} );
-
-		assert( middleware, 2 );
 	} );
 } );
