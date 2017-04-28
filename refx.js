@@ -24,10 +24,15 @@
 		return function( store ) {
 			return function( next ) {
 				return function( action ) {
-					var e;
+					var effect,
+						effectAction;
+
 					if ( map[ action.type ] ) {
-						for ( e in map[ action.type ] ) {
-							map[ action.type ][ e ]( action, store );
+						for ( effect in map[ action.type ] ) {
+							effectAction = map[ action.type ][ effect ]( action, store );
+							if ( effectAction ) {
+								store.dispatch( effectAction );
+							}
 						}
 					}
 
