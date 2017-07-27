@@ -5,6 +5,8 @@
 		this.refx = factory();
 	}
 } )( function() {
+	'use strict';
+
 	function flattenIntoMap( map, effects ) {
 		var i;
 		if ( Array.isArray( effects ) ) {
