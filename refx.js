@@ -28,14 +28,14 @@
 		return function( store ) {
 			return function( next ) {
 				return function( action ) {
-					var effect,
-						effectAction;
+					var handlers = map[ action.type ],
+						i, handlerAction;
 
-					if ( map[ action.type ] ) {
-						for ( effect in map[ action.type ] ) {
-							effectAction = map[ action.type ][ effect ]( action, store );
-							if ( effectAction ) {
-								store.dispatch( effectAction );
+					if ( handlers ) {
+						for ( i = 0; i < handlers.length; i++ ) {
+							handlerAction = handlers[ i ]( action, store );
+							if ( handlerAction ) {
+								store.dispatch( handlerAction );
 							}
 						}
 					}

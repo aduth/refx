@@ -1,6 +1,6 @@
 ### 2.1.0 (---)
 
-- Internal: Optimization on effects flattening
+- Internal: Optimize effect flattening and handler iteration
 - Internal: Add `package-lock.json`
 
 ### 2.0.0 (2017-04-28)
