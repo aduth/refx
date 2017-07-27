@@ -8,7 +8,7 @@ _refx_ takes a different approach; like in a plain Redux store, your actions mus
 
 Why is this any better than the other solutions? It separates actions which affect change in your store from the side effects that occur as a mere consequence of said actions. Actions as plain objects are also easier to extend, enabling you to compose action creators in ways that would otherwise be not possible with thunks.
 
-Heavily optimized, it weighs in at a paltry 253 bytes gzipped and minified. Browser support follows Redux, including all Node.js versions and browsers Internet Explorer 9 or newer. If you need to support Internet Explorer 8, add [`es5-shim`](https://github.com/es-shims/es5-shim) to your page prior to loading _refx_.
+Heavily optimized, it weighs in at a paltry 261 bytes gzipped and minified. Browser support follows Redux, including all Node.js versions and browsers Internet Explorer 9 or newer. If you need to support Internet Explorer 8, add [`es5-shim`](https://github.com/es-shims/es5-shim) to your page prior to loading _refx_.
 
 ## Example
 
