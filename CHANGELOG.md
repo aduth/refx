@@ -1,3 +1,7 @@
+### 2.1.0 (---)
+
+- Internal: Optimization on effects flattening
+
 ### 2.0.0 (2017-04-28)
 
 - Breaking: Effect handler argument order has been reversed, with `action` as the first argument

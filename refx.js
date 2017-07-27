@@ -6,12 +6,14 @@
 	}
 } )( function() {
 	function flattenIntoMap( map, effects ) {
-		var key;
-		for ( key in effects ) {
-			if ( Array.isArray( effects ) ) {
-				flattenIntoMap( map, effects[ key ] );
-			} else {
-				map[ key ] = ( map[ key ] || [] ).concat( effects[ key ] );
+		var i;
+		if ( Array.isArray( effects ) ) {
+			for ( i = 0; i < effects.length; i++ ) {
+				flattenIntoMap( map, effects[ i ] );
+			}
+		} else {
+			for ( i in effects ) {
+				map[ i ] = ( map[ i ] || [] ).concat( effects[ i ] );
 			}
 		}
 	}
