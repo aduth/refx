@@ -1,4 +1,4 @@
-### 3.0.0 (---)
+### 3.0.0 (2017-11-15)
 
 - Breaking: Effects are now dispatched after the original action (previously occurred before)
 
