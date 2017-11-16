@@ -29,6 +29,7 @@
 			return function( next ) {
 				return function( action ) {
 					var handlers = map[ action.type ],
+						result = next( action ),
 						i, handlerAction;
 
 					if ( handlers ) {
@@ -40,7 +41,7 @@
 						}
 					}
 
-					return next( action );
+					return result;
 				};
 			};
 		};

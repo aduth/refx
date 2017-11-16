@@ -7,43 +7,48 @@ describe( 'refx()', function() {
 	var effects = {
 		TEST: function( action, store ) {
 			store.dispatch( {
-				type: action.type,
+				type: action.type + '_EFFECTED',
 				data: store.getState()
 			} );
 		},
 		TEST_RETURN: function( action, store ) {
 			return {
-				type: action.type,
+				type: action.type + '_EFFECTED',
 				data: store.getState()
 			};
 		}
 	};
 
 	function assert( middleware ) {
-		var dispatch, store, callCount;
+		var spy, store;
 
-		dispatch = sinon.spy();
+		spy = sinon.spy();
 		store = {
-			dispatch: dispatch,
+			dispatch: spy,
 			getState: function() {
 				return true;
 			}
 		};
 
-		middleware( store )( function() {} )( { type: 'TEST' } );
-		middleware( store )( function() {} )( { type: 'TEST_RETURN' } );
+		middleware( store )( spy )( { type: 'TEST' } );
+		middleware( store )( spy )( { type: 'TEST_RETURN' } );
 
 		// Validate ignoring prototype members
 		middleware( store )( function() {} )( { type: 'valueOf' } );
 
-		callCount = Object.keys( effects ).length;
-		sinon.assert.callCount( dispatch, callCount );
-		sinon.assert.calledWith( dispatch, {
-			type: 'TEST',
+		sinon.assert.callCount( spy, 4 );
+		sinon.assert.match( spy.getCall( 0 ).args[ 0 ], {
+			type: 'TEST'
+		} );
+		sinon.assert.match( spy.getCall( 1 ).args[ 0 ], {
+			type: 'TEST_EFFECTED',
 			data: true
 		} );
-		sinon.assert.calledWith( dispatch, {
+		sinon.assert.match( spy.getCall( 2 ).args[ 0 ], {
 			type: 'TEST_RETURN',
+		} );
+		sinon.assert.match( spy.getCall( 3 ).args[ 0 ], {
+			type: 'TEST_RETURN_EFFECTED',
 			data: true
 		} );
 	}

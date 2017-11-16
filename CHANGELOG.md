@@ -1,3 +1,7 @@
+### 3.0.0 (---)
+
+- Breaking: Effects are now dispatched after the original action (previously occurred before)
+
 ### 2.1.0 (2017-07-27)
 
 - Internal: Optimize effect flattening and handler iteration
