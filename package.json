@@ -16,7 +16,7 @@
     "build": "npm run minify",
     "lint": "eslint refx.js test/refx.js",
     "test": "mocha && npm run lint",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
     "redux",
