@@ -1,4 +1,4 @@
-### 3.1.0 (TBD)
+### 3.1.0 (2018-02-17)
 
 - New: Middleware function exposes internal effects map via `effects` property
 
