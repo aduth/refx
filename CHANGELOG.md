@@ -1,3 +1,7 @@
+### 3.1.0 (TBD)
+
+- New: Middleware function exposes internal effects map via `effects` property
+
 ### 3.0.0 (2017-11-15)
 
 - Breaking: Effects are now dispatched after the original action (previously occurred before)

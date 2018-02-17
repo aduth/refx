@@ -64,4 +64,15 @@ describe( 'refx()', function() {
 
 		assert( middleware );
 	} );
+
+	it( 'should allow after-the-fact manipulation via effects property', function() {
+		var middleware = refx( [] ),
+			actionType;
+
+		for ( actionType in effects ) {
+			middleware.effects[ actionType ] = [ effects[ actionType ] ];
+		}
+
+		assert( middleware );
+	} );
 } );

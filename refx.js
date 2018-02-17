@@ -21,11 +21,12 @@
 	}
 
 	return function( effects ) {
-		var map = {};
+		var map = {},
+			middleware;
 
 		flattenIntoMap( map, effects );
 
-		return function( store ) {
+		middleware = function( store ) {
 			return function( next ) {
 				return function( action ) {
 					var handlers = map[ action.type ],
@@ -45,5 +46,9 @@
 				};
 			};
 		};
+
+		middleware.effects = map;
+
+		return middleware;
 	};
 } );
