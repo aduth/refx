@@ -1,4 +1,4 @@
-### 3.1.1 (TBD)
+### 3.1.1 (2018-02-17)
 
 - Internal: Integrated Rollup build step for 12% browser bundle size reduction (274 to 241 bytes gzipped).
 
