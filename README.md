@@ -44,7 +44,7 @@ In this example, we've defined a handler to observe the `TODO_ADD` action. When 
 
 ## Usage
 
-Download `refx.min.js` and include in your application, or install from `npm`.
+Download `refx.js` and include in your application, or install from `npm`.
 
 ```
 npm install refx
