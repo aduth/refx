@@ -8,15 +8,15 @@ describe( 'refx()', function() {
 		TEST: function( action, store ) {
 			store.dispatch( {
 				type: action.type + '_EFFECTED',
-				data: store.getState()
+				data: store.getState(),
 			} );
 		},
 		TEST_RETURN: function( action, store ) {
 			return {
 				type: action.type + '_EFFECTED',
-				data: store.getState()
+				data: store.getState(),
 			};
-		}
+		},
 	};
 
 	function assert( middleware ) {
@@ -27,7 +27,7 @@ describe( 'refx()', function() {
 			dispatch: spy,
 			getState: function() {
 				return true;
-			}
+			},
 		};
 
 		middleware( store )( spy )( { type: 'TEST' } );
@@ -38,18 +38,18 @@ describe( 'refx()', function() {
 
 		sinon.assert.callCount( spy, 4 );
 		sinon.assert.match( spy.getCall( 0 ).args[ 0 ], {
-			type: 'TEST'
+			type: 'TEST',
 		} );
 		sinon.assert.match( spy.getCall( 1 ).args[ 0 ], {
 			type: 'TEST_EFFECTED',
-			data: true
+			data: true,
 		} );
 		sinon.assert.match( spy.getCall( 2 ).args[ 0 ], {
 			type: 'TEST_RETURN',
 		} );
 		sinon.assert.match( spy.getCall( 3 ).args[ 0 ], {
 			type: 'TEST_RETURN_EFFECTED',
-			data: true
+			data: true,
 		} );
 	}
 

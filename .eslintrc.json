@@ -1,14 +1,10 @@
 {
-	"extends": "wpcalypso",
+	"extends": "@aduth/eslint-config/es5",
 	"env": {
 		"node": true,
 		"mocha": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 5
-	},
-	"rules": {
-		"no-var": "off",
-		"strict": "off"
 	}
 }
