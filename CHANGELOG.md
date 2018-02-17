@@ -1,3 +1,7 @@
+### 3.1.1 (TBD)
+
+- Internal: Integrated Rollup build step for 12% browser bundle size reduction (274 to 241 bytes gzipped).
+
 ### 3.1.0 (2018-02-17)
 
 - New: Middleware function exposes internal effects map via `effects` property
