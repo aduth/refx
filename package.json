@@ -16,6 +16,7 @@
     "postbuild": "npm run minify",
     "minify": "uglifyjs dist/refx.js -c -m > dist/refx.min.js",
     "lint": "eslint src test",
+    "pretest": "npm run build",
     "test": "mocha && npm run lint",
     "prepublishOnly": "npm test && npm run build"
   },
