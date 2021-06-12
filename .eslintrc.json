@@ -1,11 +1,6 @@
 {
-	"plugins": [ "es" ],
 	"extends": [
-		"@aduth/eslint-config/es5",
-		"plugin:es/no-2018",
-		"plugin:es/no-2017",
-		"plugin:es/no-2016",
-		"plugin:es/no-2015"
+		"@aduth/eslint-config/es5"
 	],
 	"env": {
 		"node": true,
@@ -14,8 +9,5 @@
 	"parserOptions": {
 		"ecmaVersion": 2015,
 		"sourceType": "module"
-	},
-	"rules": {
-		"es/no-modules": "off"
 	}
 }

@@ -4,6 +4,7 @@ export default {
 		{
 			format: 'cjs',
 			file: 'refx.js',
+			exports: 'default',
 		},
 		{
 			format: 'iife',
